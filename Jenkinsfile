@@ -4,19 +4,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building3..'
+                echo 'Building4..'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing2..'
+                echo 'Testing4..'
                 sh 'exit 0'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying2....'
+                echo 'Deploying4....'
             }
+        }
+    }
+    
+    post {
+        always {
+            archiveArtifacts artifacts: 'Jenkinsfile', fingerprint: true
         }
     }
 }
