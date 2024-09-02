@@ -16,6 +16,8 @@ pipeline {
                             ],
                         extensions: [
                             [$class: 'SubmoduleOption',
+                             disableSubmodules: false,
+                             parentCredentials: true,
                              recursiveSubmodules: true,
                              reference: '',
                              trackingSubmodules: true]
