@@ -1,7 +1,27 @@
+
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
 
     stages {
+        stage('Clone') {
+            checkout([$class: 'GitSCM',
+                        branches: [[name: 'main']], // Replace with your branch
+                        userRemoteConfigs: [
+                                [
+                                    url: 'https://github.com/seungyucheng/app.git',
+                                    credentialsId: "${GIT_CREDENTIALS_ID}"
+                                ]
+                            ],
+                        extensions: [
+                            [$class: 'SubmoduleOption',
+                             recursiveSubmodules: true,
+                             reference: '',
+                             trackingSubmodules: true]
+                        ]
+                    ])
+        }
+
         stage('Build') {
             steps {
                 echo 'Building2..'
