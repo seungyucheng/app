@@ -5,7 +5,8 @@ pipeline {
 
     stages {
         stage('Clone') {
-            checkout([$class: 'GitSCM',
+            steps {
+                checkout([$class: 'GitSCM',
                         branches: [[name: 'main']], // Replace with your branch
                         userRemoteConfigs: [
                                 [
@@ -19,7 +20,8 @@ pipeline {
                              reference: '',
                              trackingSubmodules: true]
                         ]
-                    ])
+                ])
+            }
         }
 
         stage('Build') {
