@@ -27,10 +27,12 @@ pipeline {
         }
 
         stage('Extract') {
-            script {
-                env.XCODE_VERSION = readJSON(file: 'config.json')
+            steps {
+                script {
+                    env.XCODE_VERSION = readJSON(file: 'config.json')
+                }
+                echo "XCODE_VERSION: ${env.XCODE_VERSION}"
             }
-            echo "XCODE_VERSION: ${env.XCODE_VERSION}"
         }
 
         stage('Build') {
