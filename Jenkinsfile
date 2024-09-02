@@ -11,7 +11,7 @@ pipeline {
                         userRemoteConfigs: [
                                 [
                                     url: 'https://github.com/seungyucheng/app.git',
-                                    credentialsId: "${GIT_CREDENTIALS_ID}"
+                                    credentialsId: 'seungyu'
                                 ]
                             ],
                         extensions: [
