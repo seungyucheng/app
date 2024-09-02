@@ -7,7 +7,7 @@ pipeline {
         stage('Clone') {
             steps {
                 checkout([$class: 'GitSCM',
-                        branches: [[name: 'main']], // Replace with your branch
+                        branches: [[name: "*/${BRANCH_NAME}"]], // Replace with your branch
                         userRemoteConfigs: [
                                 [
                                     url: 'https://github.com/seungyucheng/app.git',
