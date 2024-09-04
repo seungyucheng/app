@@ -29,7 +29,7 @@ pipeline {
         stage('Extract') {
             steps {
                 script {
-                    def props = readJSON file: 'config.json'
+                    props = readJSON file: 'config.json'
                     env.XCODE_VERSION = props.ios.xcode
                 }
                 echo "XCODE_VERSION: ${env.XCODE_VERSION}"
