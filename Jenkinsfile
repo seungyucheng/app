@@ -37,19 +37,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building2..'
+                echo 'Building3..'
                 echo "XCODE_VERSION: ${env.XCODE_VERSION}"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing2..'
+                echo 'Testing3..'
                 sh 'exit 0'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying2....'
+                echo 'Deploying3....'
             }
         }
     }
